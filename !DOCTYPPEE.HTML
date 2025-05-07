@@ -1,0 +1,164 @@
+         <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Priya</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ffe6f0, #fff0e6);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: #fff9f0;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #d63384;
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #ff6f61;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      height: 400px;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .slides {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      width: 100%;
+      height: 100%;
+    }
+
+    .active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .signature {
+      font-weight: bold;
+      color: #c0392b;
+      font-size: 20px;
+      margin-top: 30px;
+    }
+
+    .audio-controls {
+      margin-top: 20px;
+    }
+
+    .audio-controls button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #ff6f61;
+      color: white;
+      cursor: pointer;
+    }
+
+    .audio-controls button:hover {
+      background-color: #e85b50;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="background.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <h1>Happy Birthday Priya!</h1>
+    <h2>জন্মদিনের অনেক অনেক শুভেচ্ছা!</h2>
+    <p>
+      এই বিশেষ দিনে তোমার জীবনের প্রতিটি মুহূর্ত হয়ে উটুক রঙ্গিন, আনন্দময় এবং স্মরণীয়।<br>
+      তোমার হাসি যেন চিরকাল অটুট থাকে, আর তোমার স্বপ্নদশমূলো এক এক করে সত্যি হোক।
+    </p>
+    <p>
+      তোমার মতো একটি সুন্দর হৃদয়ের মানুষলকে পাওয়া ভাগ্যের ব্যাপার।<br>
+      আজ শুধু তোমার দিন য়াই আনন্দ করো, হাসো, ভালো থেকো।<br>
+      শুভ জন্মদিন প্রিয়া!
+    </p>
+
+    <div class="slideshow-container">
+      <div class="slides active"><img src="20230320_104211.jpg" alt="Photo 1"></div>
+      <div class="slides"><img src="20230320_104200.jpg" alt="Photo 2"></div>
+      <div class="slides"><img src="20230320_104112.jpg" alt="Photo 3"></div>
+      <div class="slides"><img src="20230320_104106.jpg" alt="Photo 4"></div>
+      <div class="slides"><img src="20230320_104054.jpg" alt="Photo 5"></div>
+      <div class="slides"><img src="20230320_104047.jpg" alt="Photo 6"></div>
+    </div>
+
+    <div class="audio-controls">
+      <button onclick="playMusic()">Play Music</button>
+      <button onclick="pauseMusic()">Pause Music</button>
+    </div>
+
+    <p class="signature">
+      — তোমার প্রিয় মানুষ                                    
+    </p>
+  </div>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slides");
+
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1; }
+      slides[slideIndex - 1].classList.add("active");
+      setTimeout(showSlides, 3000); // Change every 3 seconds
+    }
+    showSlides();
+
+    const bgMusic = document.getElementById("bgMusic");
+    function playMusic() {
+      bgMusic.play();
+    }
+    function pauseMusic() {
+      bgMusic.pause();
+    }
+  </script>
+
+</body>
+</html>
